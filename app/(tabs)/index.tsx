@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   mainHeading: { fontSize: 42, fontWeight: '800', lineHeight: 48 },
   subText: { color: '#64748b', marginTop: 15, fontSize: 16 },
   buttonRow: { flexDirection: 'row', marginTop: 40, gap: 15 },
-  btnPrimary: { backgroundColor: '#000', paddingVertical: 18, paddingHorizontal: 30, borderRadius: 20 },
+  btnPrimary: { backgroundColor: '#000', paddingVertical: 18, paddingHorizontal: 30, borderRadius: 20 ,marginLeft: 20 },
   btnSecondary: { borderWidth: 1, borderColor: '#e2e8f0', paddingVertical: 18, paddingHorizontal: 30, borderRadius: 20 },
   btnText: { color: '#fff', fontWeight: 'bold' },
   btnTextDark: { color: '#000', fontWeight: 'bold' }
