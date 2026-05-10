@@ -1,3 +1,4 @@
+import { Link } from 'expo-router';
 import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native';
 
 export default function Onboarding() {
@@ -11,15 +12,18 @@ export default function Onboarding() {
         <Text style={styles.timer}>01:28:32</Text>
       </View>
 
-      <View style={styles.bottomContent}>
-        <Text style={styles.mainHeading}>Manage all{"\n"}smarter{"\n"}<Text style={{color: '#94a3b8'}}>tasks faster.</Text></Text>
-        <Text style={styles.subText}>Plan, organize and focus on what matters most.</Text>
-        
-        <View style={styles.buttonRow}>
-          <TouchableOpacity style={styles.btnPrimary}><Text style={styles.btnText}>Get Started</Text></TouchableOpacity>
-          <TouchableOpacity style={styles.btnSecondary}><Text style={styles.btnTextDark}>Watch video</Text></TouchableOpacity>
-        </View>
-      </View>
+      <View style={styles.buttonRow}>
+  {/* Just wrap the TouchableOpacity directly in the Link */}
+  <Link href="/modal" asChild>
+    <TouchableOpacity style={styles.btnPrimary}>
+      <Text style={styles.btnText}>Get Started</Text>
+    </TouchableOpacity>
+  </Link>
+
+  <TouchableOpacity style={styles.btnSecondary}>
+    <Text style={styles.btnTextDark}>Watch video</Text>
+  </TouchableOpacity>
+</View>
     </SafeAreaView>
   );
 }
