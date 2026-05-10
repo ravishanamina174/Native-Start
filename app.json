@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "MyFirstApp",
+    "name": "Financial Helper",
     "slug": "MyFirstApp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/dog.png",
     "scheme": "myfirstapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,

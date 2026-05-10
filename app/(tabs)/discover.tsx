@@ -35,7 +35,7 @@ export default function DiscoverScreen() {
       {/* Animated Masking Header */}
       <Animated.View style={[styles.header, { height: headerHeight }]}>
         <Animated.Image
-          source={{ uri: 'https://images.unsplash.com/photo-1614728263952-84ea256f9679?q=80&w=1000&auto=format&fit=crop' }}
+          source={{ uri: 'https://pub-4799464f4a674b45acf85fa27131cf7b.r2.dev/focus.jpg' }}
           style={[styles.headerImage, { opacity: imageOpacity, transform: [{ scale: imageScale }] }]}
         />
         <View style={styles.overlay}>
@@ -57,7 +57,7 @@ export default function DiscoverScreen() {
           {[1, 2, 3, 4, 5].map((item) => (
             <View key={item} style={styles.articleCard}>
               <View style={styles.articleImagePlaceholder} />
-              <View style={styles.articleTextWrapper}>
+              <View >
                 <Text style={styles.articleTitle}>Mastering React Native Animation #{item}</Text>
                 <Text style={styles.articleSub}>Learn the secrets of 60FPS UI.</Text>
               </View>
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    backgroundColor: '#7C3AED',
+    backgroundColor: '#c8c5ccaf',
     overflow: 'hidden',
     zIndex: 10,
   },
