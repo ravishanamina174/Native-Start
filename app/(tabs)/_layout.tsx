@@ -1,45 +1,35 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-
-import { HapticTab } from '@/components/haptic-tab';
 import { IconSymbol } from '@/components/ui/icon-symbol';
 import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-// ... (keep your existing imports)
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: '#7C3AED', // Purple from your screenshot
         headerShown: false,
-        tabBarButton: HapticTab,
+        tabBarStyle: { height: 70, paddingBottom: 10 },
       }}>
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: 'Start',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="circle.grid.2x2.fill" color={color} />,
         }}
       />
-      
-      {/* ADD THIS NEW SECTION BELOW */}
       <Tabs.Screen
-        name="ai"
+        name="dashboard"
         options={{
-          title: 'AI Bot',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="cpu" color={color} />, // Use 'cpu' or 'robot' depending on your icon set
+          title: 'Tasks',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="square.stack.3d.up.fill" color={color} />,
         }}
       />
-
       <Tabs.Screen
-        name="explore"
+        name="analytics"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Stats',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="chart.bar.fill" color={color} />,
         }}
       />
     </Tabs>
