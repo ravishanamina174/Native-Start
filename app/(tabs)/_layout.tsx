@@ -1,42 +1,38 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
+import { Home, Search, ShoppingBag } from 'lucide-react-native';
 
 export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: '#7C3AED', // Purple from your screenshot
+        tabBarActiveTintColor: '#1A1A1A',
+        tabBarInactiveTintColor: '#D1D1D1',
         headerShown: false,
-        tabBarStyle: { height: 70, paddingBottom: 10 },
+        tabBarShowLabel: false,
+        tabBarStyle: {
+          backgroundColor: '#F9F9F7',
+          borderTopWidth: 0,
+          height: 80,
+          paddingTop: 10,
+        },
       }}>
       <Tabs.Screen
-        name="index"
+        name="index" // This points to index.tsx (your Home)
         options={{
-          title: 'Start',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="circle.grid.2x2.fill" color={color} />,
+          tabBarIcon: ({ color }) => <Home size={24} color={color} strokeWidth={1.5} />,
         }}
       />
       <Tabs.Screen
-        name="dashboard"
+        name="Products" // This points to Products.tsx
         options={{
-          title: 'Tasks',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="square.stack.3d.up.fill" color={color} />,
+          tabBarIcon: ({ color }) => <Search size={24} color={color} strokeWidth={1.5} />,
         }}
       />
       <Tabs.Screen
-        name="analytics"
+        name="Cart" // This points to Cart.tsx
         options={{
-          title: 'Stats',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="chart.bar.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="discover"
-        options={{
-          title: 'Discover',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="magnifyingglass.circle.fill" color={color} />,
+          tabBarIcon: ({ color }) => <ShoppingBag size={24} color={color} strokeWidth={1.5} />,
         }}
       />
     </Tabs>

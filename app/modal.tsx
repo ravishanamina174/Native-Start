@@ -1,50 +1,61 @@
 import { Link } from 'expo-router';
-import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, ScrollView } from 'react-native';
 import { IconSymbol } from '@/components/ui/icon-symbol';
 
 export default function ModalScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      {/* Visual indicator for a draggable modal handle */}
+      {/* Draggable Handle */}
       <View style={styles.handle} />
 
-      <View style={styles.contentWrapper}>
+      <ScrollView contentContainerStyle={styles.contentWrapper}>
         <View style={styles.iconCircle}>
-          <IconSymbol size={40} name="sparkles" color="#7C3AED" />
+          {/* Changed icon to represent fragrance/sparkles */}
+          <IconSymbol size={40} name="wind" color="#1A1A1A" />
         </View>
 
-        <Text style={styles.modalTitle}>Unlock AI Insights</Text>
+        <Text style={styles.modalTitle}>Scent Composition</Text>
         <Text style={styles.description}>
-          Get detailed breakdowns of your productivity and task efficiency using our latest AI models.
+          Understanding the notes that make up this unique olfactory experience.
         </Text>
 
-        {/* Feature List */}
-        <View style={styles.featureList}>
-          <View style={styles.featureItem}>
-            <IconSymbol size={20} name="checkmark.circle.fill" color="#10B981" />
-            <Text style={styles.featureText}>Real-time Analytics</Text>
+        {/* Note List */}
+        <View style={styles.noteList}>
+          <View style={styles.noteItem}>
+            <View style={styles.dot} />
+            <View>
+              <Text style={styles.noteType}>Top Notes</Text>
+              <Text style={styles.noteDetails}>Bergamot, Orange Blossom, Pink Pepper</Text>
+            </View>
           </View>
-          <View style={styles.featureItem}>
-            <IconSymbol size={20} name="checkmark.circle.fill" color="#10B981" />
-            <Text style={styles.featureText}>Smart Task Prioritization</Text>
+
+          <View style={styles.noteItem}>
+            <View style={[styles.dot, { backgroundColor: '#EAD8D0' }]} />
+            <View>
+              <Text style={styles.noteType}>Heart Notes</Text>
+              <Text style={styles.noteDetails}>Bulgarian Rose, Jasmine, Praline</Text>
+            </View>
           </View>
-          <View style={styles.featureItem}>
-            <IconSymbol size={20} name="checkmark.circle.fill" color="#10B981" />
-            <Text style={styles.featureText}>Unlimited Cloud Sync</Text>
+
+          <View style={styles.noteItem}>
+            <View style={[styles.dot, { backgroundColor: '#1A1A1A' }]} />
+            <View>
+              <Text style={styles.noteType}>Base Notes</Text>
+              <Text style={styles.noteDetails}>Vanilla, Cedarwood, Musk</Text>
+            </View>
           </View>
         </View>
 
         <TouchableOpacity style={styles.primaryButton}>
-          <Text style={styles.buttonText}>Upgrade to Pro</Text>
+          <Text style={styles.buttonText}>Shop This Collection</Text>
         </TouchableOpacity>
 
-        {/* Close Link */}
         <Link href="/" asChild>
           <TouchableOpacity style={styles.closeButton}>
-            <Text style={styles.closeText}>Maybe Later</Text>
+            <Text style={styles.closeText}>Close</Text>
           </TouchableOpacity>
         </Link>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -52,85 +63,98 @@ export default function ModalScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0F172A', // Dark Slate matching your stats page
+    backgroundColor: '#F9F9F7', // Matches your Cream/White theme
     alignItems: 'center',
   },
   handle: {
     width: 40,
     height: 5,
-    backgroundColor: '#334155',
+    backgroundColor: '#E5E5E5',
     borderRadius: 10,
     marginTop: 15,
   },
   contentWrapper: {
-    flex: 1,
     padding: 30,
     alignItems: 'center',
-    justifyContent: 'center',
     width: '100%',
   },
   iconCircle: {
     width: 80,
     height: 80,
     borderRadius: 40,
-    backgroundColor: '#1E293B',
+    backgroundColor: '#FFF',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
     borderWidth: 1,
-    borderColor: '#334155',
+    borderColor: '#EEE',
   },
   modalTitle: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: '#fff',
+    fontSize: 26,
+    fontWeight: '300', // Light font for high-end look
+    color: '#1A1A1A',
     textAlign: 'center',
   },
   description: {
-    fontSize: 16,
-    color: '#94A3B8',
+    fontSize: 15,
+    color: '#888',
     textAlign: 'center',
-    marginTop: 15,
-    lineHeight: 24,
+    marginTop: 10,
+    lineHeight: 22,
   },
-  featureList: {
+  noteList: {
     width: '100%',
     marginTop: 30,
-    gap: 15,
+    gap: 20,
   },
-  featureItem: {
+  noteItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#1E293B',
-    padding: 15,
-    borderRadius: 15,
-    gap: 12,
+    backgroundColor: '#FFF',
+    padding: 20,
+    borderRadius: 4, // Square corners match your screenshot
+    gap: 15,
+    borderWidth: 1,
+    borderColor: '#F0F0F0',
   },
-  featureText: {
-    color: '#E2E8F0',
-    fontSize: 16,
-    fontWeight: '500',
+  dot: {
+    width: 12,
+    height: 12,
+    borderRadius: 6,
+    backgroundColor: '#D1D1D1',
+  },
+  noteType: {
+    color: '#1A1A1A',
+    fontSize: 14,
+    fontWeight: '700',
+    textTransform: 'uppercase',
+    letterSpacing: 1,
+  },
+  noteDetails: {
+    color: '#888',
+    fontSize: 13,
+    marginTop: 2,
   },
   primaryButton: {
-    backgroundColor: '#7C3AED',
+    backgroundColor: '#1A1A1A',
     width: '100%',
-    padding: 20,
-    borderRadius: 20,
+    padding: 18,
+    borderRadius: 4,
     marginTop: 40,
     alignItems: 'center',
   },
   buttonText: {
     color: '#fff',
-    fontSize: 18,
-    fontWeight: 'bold',
+    fontSize: 16,
+    fontWeight: '600',
   },
   closeButton: {
     marginTop: 20,
     padding: 10,
   },
   closeText: {
-    color: '#64748B',
-    fontSize: 16,
+    color: '#AAA',
+    fontSize: 14,
     fontWeight: '600',
   },
 });
