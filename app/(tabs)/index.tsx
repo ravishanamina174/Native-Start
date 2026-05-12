@@ -92,4 +92,6 @@ const styles = StyleSheet.create({
   filterText: { color: '#FFF', marginLeft: 8, fontWeight: '600' }
 });
 
+
+
 export default HomeScreen;
