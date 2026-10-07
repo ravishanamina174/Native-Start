@@ -14,9 +14,3 @@ Your code does not run inside a mobile web browser wrapper. At runtime, React Na
 The app operates on two primary sides that talk to each other synchronously:
 * **The JavaScript Side:** This handles your application logic, layout rules, state management, and user interaction logic.
 * **The Native Side:** This handles the actual device screen rendering, animations, and security constraints of iOS or Android.
-
-### 4. What is Expo?
-[Expo](https://docs.expo.dev/workflow/overview/ "Develop an app with Expo - Expo Documentation") is the framework ecosystem wrapping React Native in this project. It simplifies complex mobile tasks by providing:
-* **Pre-configured Native Modules:** Instantly links native device capabilities (Camera, Biometrics, Storage) without modifying iOS/Android configuration files manually.
-* **Continuous Native Generation (CNG):** Dynamically generates platform folders on demand so you can focus entirely on the application logic.
-* **Expo Go / Dev Builds:** Allows you to test changes on your physical phone in real-time as you save files locally.
